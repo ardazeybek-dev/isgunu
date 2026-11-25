@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+
+# JavaScript
+node_modules/
+coverage/
+*.log
+.npmrc
+
+# Secrets
+.env
+.env.*
+*.pem
+.pypirc
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

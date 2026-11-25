@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "isgunu"
+dynamic = ["version"]
+description = "Turkish public holidays with arife half days, Diyanet bayram dates and business-day arithmetic: add working days, count them, legal deadlines, bridge days. No dependencies."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [
+    { name = "Arda Zeybek", email = "179981861+ardazeybek-dev@users.noreply.github.com" },
+]
+keywords = ["turkey", "turkish", "holidays", "resmi tatil", "is gunu", "business days", "working days", "bayram", "arife", "calendar"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Natural Language :: Turkish",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Scheduling",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.urls]
+Homepage = "https://github.com/ardazeybek-dev/isgunu"
+Repository = "https://github.com/ardazeybek-dev/isgunu"
+Issues = "https://github.com/ardazeybek-dev/isgunu/issues"
+
+[project.scripts]
+isgunu = "isgunu.cli:main"
+
+[tool.hatch.version]
+path = "src/isgunu/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/isgunu"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/isgunu", "tests", "README.md", "LICENSE"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["src/isgunu/_data.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.format]
+exclude = ["*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "src", "README.md"]
+addopts = "-q --doctest-modules --doctest-glob=README.md --import-mode=importlib"
