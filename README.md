@@ -141,12 +141,20 @@ match. Publishing a GitHub release uploads the Python package to PyPI.
 * A holiday row seems missing for a date → two holidays share it → `holiday()`
   returns one (full day, then bayram first); `holidays(year)` lists both.
 
-## Related
+## Türkiye toolkit
 
-Part of a small set of Türkiye developer tools:
-[trkit](https://github.com/ardazeybek-dev/trkit) /
-[trkit-js](https://github.com/ardazeybek-dev/trkit-js) (TCKN, VKN, IBAN, Turkish text) ·
-[ekstre](https://github.com/ardazeybek-dev/ekstre) (bank statements) ·
-[adres](https://github.com/ardazeybek-dev/adres) (address parsing).
+Part of a small set of tools for the Turkish data that general-purpose libraries get wrong:
 
-MIT licence.
+| Package | What it does | Install |
+| --- | --- | --- |
+| [trkit](https://github.com/ardazeybek-dev/trkit) | Turkish casing (`i` → `İ`), slugify, TCKN, IBAN and plate validation · Python + CLI | `pip install trkit` |
+| [trkit-js](https://github.com/ardazeybek-dev/trkit-js) | The same for JavaScript, plus VKN, phone numbers and Zod schemas | `npm install @ardazeybek-dev/trkit` |
+| [kvkk](https://github.com/ardazeybek-dev/kvkk) | Finds and masks Turkish personal data in files, logs and dumps | `pip install kvkk` |
+| [ekstre](https://github.com/ardazeybek-dev/ekstre) | Turkish bank statement exports (.xlsx, .xls, .csv) into typed transactions | `pip install ekstre` |
+| [adres-tr](https://github.com/ardazeybek-dev/adres) | Free-form Turkish addresses into province, district, neighbourhood, street… | `pip install adres-tr` |
+| [efatura-tr](https://github.com/ardazeybek-dev/efatura) | Reads e-Fatura / e-Arşiv (UBL-TR) XML and checks that the totals add up | `pip install efatura-tr` |
+| [bordro](https://github.com/ardazeybek-dev/bordro) | Payroll: gross ↔ net with the cumulative income tax · TypeScript | `npm install bordro` |
+
+## License
+
+MIT
